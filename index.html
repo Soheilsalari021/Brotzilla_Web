@@ -12,7 +12,10 @@
 </head>
 <body>
     <header class="navbar">
-        <div class="logo">Brotzilla</div>
+        <a href="index.html" class="logo">
+            <img src="img/Element 2@2x.png" alt="Brotzilla Icon" class="logo-img">
+            <img src="img/Element 1@2x.png" alt="Brotzilla" class="logo-img">
+        </a>
         <nav>
             <div class="mobile-menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
@@ -30,48 +33,70 @@
 
     <main>
         <section id="home" class="hero">
-            <!-- Background Slider -->
-            <div class="hero-slider" id="hero-slider">
-                <div class="slide active" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/slider_bread.png');"></div>
-                <div class="slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/slider_breakfast.png');"></div>
-                <div class="slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/slider_pastry.png');"></div>
-            </div>
-            <div class="hero-content">
-                <h1>Monsterstarker Geschmack</h1>
-                <p>Frisches Brot, handgemachte Backwaren und ein Frühstück, das selbst ein Monster satt macht. Besuche uns im Dschungel des Geschmacks.</p>
-                <div class="cta-group">
-                    <a href="speisen.html" class="btn-primary">Zu den Speisen</a>
-                    <a href="#contact" class="btn-secondary">Tisch reservieren</a>
+            <div class="hero-slider-wrapper">
+                <div class="hero-slider" id="hero-slider">
+                    <div class="slide active" style="background-image: url('img/IMG_4366.JPG');"></div>
+                    <div class="slide" style="background-image: url('img/IMG_4379.JPG');"></div>
+                    <div class="slide" style="background-image: url('img/IMG_4387.JPG');"></div>
+                    <div class="slide" style="background-image: url('img/IMG_4391.JPG');"></div>
+                    <div class="slide" style="background-image: url('img/slider_bread.png');"></div>
+                    <div class="slide" style="background-image: url('img/slider_breakfast.png');"></div>
+                    <div class="slide" style="background-image: url('img/slider_pastry.png');"></div>
+                </div>
+                <button class="slider-btn slider-btn-left" id="slider-prev">&#8249;</button>
+                <button class="slider-btn slider-btn-right" id="slider-next">&#8250;</button>
+                <div class="slider-dots" id="slider-dots"></div>
+                <div class="hero-text-overlay">
+                    <h1>Monsterstarker Geschmack</h1>
+                    <p>Frisches Brot, handgemachte Backwaren und ein Frühstück, das selbst ein Monster satt macht. Besuche uns im Dschungel des Geschmacks.</p>
                 </div>
             </div>
-
+            <div class="hero-buttons">
+                <a href="speisen.html" class="btn-primary">Zu den Speisen</a>
+                <a href="#contact" class="btn-secondary">Tisch reservieren</a>
+            </div>
         </section>
 
-        <section id="location" class="menu-section" style="padding: 5rem 5%;">
-            <div class="menu-container" style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <h2 class="menu-title" style="margin-bottom: 2rem;">HIER FINDEST DU UNS</h2>
-                <div style="width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid var(--glass-border); box-shadow: 0 0 30px rgba(0,0,0,0.5); margin-bottom: 2rem;">
-                    <!-- Nutze exakte Adresse für den roten Pin -->
-                    <iframe src="https://maps.google.com/maps?q=Gabelsbergerstra%C3%9Fe%202,%2074074%20Heilbronn&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="section-divider"></div>
+
+        <section id="reviews" class="reviews-section">
+            <h2 class="menu-title reveal">WAS UNSERE GÄSTE SAGEN</h2>
+            <div class="reviews-summary reveal delay-1">
+                <span class="reviews-rating-big" id="reviews-rating">—</span>
+                <div class="reviews-stars-big" id="reviews-stars-big"></div>
+                <span class="reviews-count" id="reviews-count">Bewertungen auf Google</span>
+            </div>
+            <div class="reviews-grid" id="reviews-grid">
+                <div class="reviews-loading">Bewertungen werden geladen…</div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section id="location" class="location-section">
+            <h2 class="menu-title location-title reveal">HIER FINDEST DU UNS</h2>
+            <div class="location-grid">
+                <div class="location-map reveal-left">
+                    <iframe src="https://maps.google.com/maps?q=Gabelsbergerstra%C3%9Fe%202,%2074074%20Heilbronn&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-                
-                <div style="background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
-                    <h3 style="color: var(--neon-yellow); font-size: 1.5rem; margin-bottom: 0.5rem; text-shadow: 0 0 5px var(--neon-yellow);">Brotzilla Bäckerei</h3>
-                    <p style="color: #cbd5e1; font-size: 1.2rem; margin-bottom: 1.5rem;">Gabelsbergerstr. 2<br>74074 Heilbronn<br><span style="color: var(--neon-peach); font-size: 1rem;">(direkt neben Aldi)</span></p>
-                    <a href="https://www.google.com/maps/dir/?api=1&destination=Gabelsbergerstraße+2,+74074+Heilbronn" target="_blank" class="btn-primary" style="display: inline-block;">🗺️ Anfahrt planen</a>
+                <div class="location-info reveal-right">
+                    <h3>Brotzilla Bäckerei</h3>
+                    <p>Gabelsbergerstr. 2<br>74074 Heilbronn<br><span style="color: var(--neon-peach);">(direkt neben Aldi)</span></p>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=Gabelsbergerstraße+2,+74074+Heilbronn" target="_blank" class="btn-primary"><img src="img/Google_Maps_icon_(2020).svg.png" alt="Google Maps" style="height:18px; width:auto; vertical-align:middle;"> Anfahrt planen</a>
                 </div>
             </div>
         </section>
     </main>
 
+
     <footer class="main-footer" id="contact">
         <div class="footer-container">
-            <div class="footer-info">
+            <div class="footer-info reveal delay-1">
                 <h3>Brotzilla Bäckerei</h3>
                 <p>Deine Bäckerei in Heilbronn.</p>
-                <p class="phone-number">📞 07131 59 49 283</p>
+                <p class="phone-number"><a href="tel:+4971315949283">📞 07131 59 49 283</a></p>
             </div>
-            <div class="footer-hours">
+            <div class="footer-hours reveal delay-2">
                 <h3>Öffnungszeiten:</h3>
                 <ul>
                     <li><span>Montag - Freitag</span><span>05:30 - 18:00 Uhr</span></li>
@@ -80,7 +105,7 @@
                     <li class="closed"><span>Dienstag</span><span>geschlossen</span></li>
                 </ul>
             </div>
-            <div class="footer-extra">
+            <div class="footer-extra reveal delay-3">
                 <div class="promo-box">
                     <p>SCHENKEN MACHT GLÜCKLICH.<br><span style="color: var(--neon-orange); font-weight: bold;">GUTSCHEINE GIBT'S BEI UNS!</span></p>
                 </div>
