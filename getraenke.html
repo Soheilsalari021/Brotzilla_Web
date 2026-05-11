@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brotzilla - Bäckerei & Frühstück</title>
+    <meta name="description" content="Deine Bäckerei für monsterstarkes Frühstück und frisches Brot.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">Brotzilla</div>
+        <nav>
+            <div class="mobile-menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#home">Start</a></li>
+                <li><a href="getraenke.html">Getränke</a></li>
+                <li><a href="speisen.html">Speisen</a></li>
+                <li><a href="index.html#contact" class="btn-primary">Reservieren</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="menu" class="menu-section" style="padding-top: 10rem;">
+            <div class="menu-container">
+                <h2 class="menu-title">GETRÄNKE</h2>
+                
+                <div class="menu-category">
+                    <h3 class="category-title">SOFTDRINKS</h3>
+                    
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <span class="item-number">16</span>
+                            <span class="item-name">WASSER STILL</span>
+                            <span class="item-volume">0,5L</span>
+                            <span class="item-price">2,00 €</span>
+                        </li>
+                        <li class="menu-item">
+                            <span class="item-number">17</span>
+                            <span class="item-name">WASSER SPRUDEL</span>
+                            <span class="item-volume">0,5L</span>
+                            <span class="item-price">2,00 €</span>
+                        </li>
+                        <li class="menu-item">
+                            <span class="item-number">18</span>
+                            <div class="item-name-group">
+                                <span>COCA COLA, FANTA</span>
+                                <span>MEZZO-MIX, SPRITE</span>
+                            </div>
+                            <span class="item-volume">0,33L</span>
+                            <span class="item-price">2,50 €</span>
+                        </li>
+                        <li class="menu-item">
+                            <span class="item-number">19</span>
+                            <span class="item-name">DURSTLÖSCHER</span>
+                            <span class="item-volume">0,5L</span>
+                            <span class="item-price">2,00 €</span>
+                        </li>
+                        <li class="menu-item">
+                            <span class="item-number">20</span>
+                            <span class="item-name">CAPRI SONNE</span>
+                            <span class="item-volume">0,2L</span>
+                            <span class="item-price">2,00 €</span>
+                        </li>
+                        <li class="menu-item">
+                            <span class="item-number">21</span>
+                            <span class="item-name">APFELSAFT</span>
+                            <span class="item-volume">0,33L</span>
+                            <span class="item-price">2,00 €</span>
+                        </li>
+                        <li class="menu-item">
+                            <span class="item-number">22</span>
+                            <span class="item-name">ORANGENSAFT</span>
+                            <span class="item-volume">0,33L</span>
+                            <span class="item-price">3,00 €</span>
+                        </li>
+                        <li class="menu-item">
+                            <span class="item-number">23</span>
+                            <span class="item-name">ENERGYDRINK</span>
+                            <span class="item-volume">0,25L</span>
+                            <span class="item-price">3,00 €</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="menu-category" style="margin-top: 3rem;">
+                    <div class="category-header" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">
+                        <h3 class="category-title" style="margin-bottom: 0;">HEISSE GETRÄNKE</h3>
+                        <div style="color: var(--neon-orange); font-weight: 800; font-size: 1.1rem; text-shadow: 0 0 5px var(--neon-orange); display: flex; gap: 1rem; min-width: 150px; justify-content: flex-end;">
+                            <span style="width: 70px; text-align: right;">NORMAL</span>
+                            <span style="width: 70px; text-align: right;">GROSS</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="menu-list">
+                        <li class="menu-item price-two-cols">
+                            <span class="item-number">24</span>
+                            <span class="item-name">ESPRESSO<span style="font-size: 0.7rem; vertical-align: super;">9</span></span>
+                            <span class="item-price">2,20 €</span>
+                            <span class="item-price"></span>
+                        </li>
+                        <li class="menu-item price-two-cols">
+                            <span class="item-number">25</span>
+                            <span class="item-name">KAFFEE CREMA<span style="font-size: 0.7rem; vertical-align: super;">9</span></span>
+                            <span class="item-price">2,50 €</span>
+                            <span class="item-price">2,90 €</span>
+                        </li>
+                        <li class="menu-item price-two-cols">
+                            <span class="item-number">26</span>
+                            <span class="item-name">MILCHKAFFEE<span style="font-size: 0.7rem; vertical-align: super;">9,G</span></span>
+                            <span class="item-price">2,70 €</span>
+                            <span class="item-price">3,10 €</span>
+                        </li>
+                        <li class="menu-item price-two-cols">
+                            <span class="item-number">27</span>
+                            <span class="item-name">CAPPUCCINO<span style="font-size: 0.7rem; vertical-align: super;">9,G</span></span>
+                            <span class="item-price">2,70 €</span>
+                            <span class="item-price">3,10 €</span>
+                        </li>
+                        <li class="menu-item price-two-cols">
+                            <span class="item-number">28</span>
+                            <span class="item-name">LATTE MACCHIATO<span style="font-size: 0.7rem; vertical-align: super;">9,G</span></span>
+                            <span class="item-price"></span>
+                            <span class="item-price">3,60 €</span>
+                        </li>
+                        <li class="menu-item price-two-cols">
+                            <span class="item-number">29</span>
+                            <span class="item-name">HEISSE SCHOKOLADE<span style="font-size: 0.7rem; vertical-align: super;">7,G,T</span></span>
+                            <span class="item-price"></span>
+                            <span class="item-price">3,00 €</span>
+                        </li>
+                        <li class="menu-item price-two-cols">
+                            <span class="item-number">30</span>
+                            <span class="item-name">TEE VERSCHIEDENE SORTEN</span>
+                            <span class="item-price"></span>
+                            <span class="item-price">2,50 €</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="menu-category" style="margin-top: 3rem;">
+                    <h3 class="category-title">KAFFEESPEZIALITÄTEN</h3>
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <span class="item-number">31</span>
+                            <div class="item-name-group">
+                                <span>ICED AMERICANO<span style="font-size: 0.7rem; vertical-align: super;">9</span></span>
+                                <span style="font-size: 0.9rem; color: #aaa; text-transform: none; font-weight: normal;">Espresso, Wasser, Eis</span>
+                            </div>
+                            <span class="item-price">3,80 €</span>
+                        </li>
+                        <li class="menu-item">
+                            <span class="item-number">32</span>
+                            <div class="item-name-group">
+                                <span>ICED LATTE<span style="font-size: 0.7rem; vertical-align: super;">9,G</span></span>
+                                <span style="font-size: 0.9rem; color: #aaa; text-transform: none; font-weight: normal;">Espresso, Milch, Eis</span>
+                            </div>
+                            <span class="item-price">4,30 €</span>
+                        </li>
+                        <li class="menu-item">
+                            <span class="item-number">33</span>
+                            <div class="item-name-group">
+                                <span>EISKAFFEE KLASSISCH<span style="font-size: 0.7rem; vertical-align: super;">9,G</span></span>
+                                <span style="font-size: 0.9rem; color: #aaa; text-transform: none; font-weight: normal;">Kaffee, Milch, Eis, Sahne</span>
+                            </div>
+                            <span class="item-price">4,80 €</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer" id="contact">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>Brotzilla Bäckerei</h3>
+                <p>Deine Bäckerei in Heilbronn.</p>
+                <p class="phone-number">📞 07131 59 49 283</p>
+            </div>
+            <div class="footer-hours">
+                <h3>Öffnungszeiten:</h3>
+                <ul>
+                    <li><span>Montag - Freitag</span><span>05:30 - 18:00 Uhr</span></li>
+                    <li><span>Samstag</span><span>07:00 - 18:00 Uhr</span></li>
+                    <li><span>Sonntag</span><span>07:30 - 14:00 Uhr</span></li>
+                    <li class="closed"><span>Dienstag</span><span>geschlossen</span></li>
+                </ul>
+            </div>
+            <div class="footer-extra">
+                <div class="promo-box">
+                    <p>SCHENKEN MACHT GLÜCKLICH.<br><span style="color: var(--neon-orange); font-weight: bold;">GUTSCHEINE GIBT'S BEI UNS!</span></p>
+                </div>
+                <div class="service-box">
+                    <p>BESTELLUNGEN & SERVICE:<br><span>RUFEN SIE UNS AN ODER FRAGEN SIE UNS VOR ORT.</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Brotzilla. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js?v=5"></script>
+</body>
+</html>
