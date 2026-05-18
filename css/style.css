@@ -110,11 +110,19 @@ p {
     width: 100%;
     top: 0;
     z-index: 1000;
-    background: rgba(244, 241, 225, 0.95);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    /* Hintergrundbild einfügen */
+    background-image: url('../img/image.png');
+    background-size: cover;
+    background-position: center;
     border-bottom: 1px solid var(--glass-border);
     transition: var(--transition);
+    /* Abdunkeln, damit die Schrift lesbar bleibt */
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4);
+}
+
+.navbar.scrolled {
+    /* Wenn gescrollt wird, dunkler machen */
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.8), 0 4px 20px rgba(0,0,0,0.5);
 }
 
 .logo {
@@ -140,7 +148,8 @@ p {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-color);
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
     font-weight: 600;
     font-size: 1.05rem;
     letter-spacing: 0.5px;

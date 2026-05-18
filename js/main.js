@@ -69,9 +69,11 @@ document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => 
 // ── Navbar scroll effect ──
 const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
-    navbar.style.background = window.scrollY > 60
-        ? 'rgba(0,0,0,0.85)'
-        : 'rgba(0,0,0,0.55)';
+    if (window.scrollY > 60) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
 });
 
 // ── Google Reviews ──
