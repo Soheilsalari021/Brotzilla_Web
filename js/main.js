@@ -1,8 +1,5 @@
 // ─────────────────────────────────────────────
-//  GOOGLE BEWERTUNGEN – HIER EINTRAGEN:
-// ─────────────────────────────────────────────
-const GOOGLE_API_KEY = 'AIzaSyDg3Bp8_PmkD9vi5UApN_3qihT0UCWpDiA';
-const PLACE_ID       = 'ChIJMaH56hgvmEcRP4MMML00W54';
+//  GOOGLE BEWERTUNGEN API (wird nun sicher übers Backend geladen)
 // ─────────────────────────────────────────────
 
 // ── Burger Menu ──
@@ -130,8 +127,6 @@ const CACHE_KEY = 'brotzilla_reviews_cache';
 const ONE_WEEK  = 7 * 24 * 60 * 60 * 1000;
 
 async function loadGoogleReviews() {
-    if (GOOGLE_API_KEY === 'DEIN_API_SCHLUESSEL_HIER') return;
-
     // Cache prüfen — wenn jünger als 1 Woche, direkt anzeigen
     try {
         const cached = JSON.parse(localStorage.getItem(CACHE_KEY));
@@ -141,10 +136,9 @@ async function loadGoogleReviews() {
         }
     } catch (_) {}
 
-    // Neue Daten von Google holen
+    // Neue Daten von unserem eigenen Backend holen (sicher vor Hacking)
     try {
-        const url = `https://places.googleapis.com/v1/places/${PLACE_ID}?fields=rating,userRatingCount,reviews&languageCode=de&key=${GOOGLE_API_KEY}`;
-        const res  = await fetch(url, { headers: { 'X-Goog-Api-Key': GOOGLE_API_KEY } });
+        const res  = await fetch('/api/reviews');
         if (!res.ok) throw new Error(res.status);
         const data = await res.json();
 
