@@ -7,7 +7,7 @@
     <meta name="description" content="Deine Bäckerei für monsterstarkes Frühstück und frisches Brot.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -26,7 +26,10 @@
                 <li><a href="index.html#home">Start</a></li>
                 <li><a href="getraenke.html">Getränke</a></li>
                 <li><a href="speisen.html">Speisen</a></li>
-                <li><a href="index.html#contact" class="btn-primary">Reservieren</a></li>
+                <li style="display: flex; flex-direction: column; align-items: center; gap: 2px;">
+                    <span class="btn-primary" style="opacity: 0.6; cursor: not-allowed;">Reservieren</span>
+                    <span style="font-size: 0.7rem; font-weight: bold; color: var(--primary); text-transform: uppercase;">Coming soon</span>
+                </li>
             </ul>
         </nav>
     </header>
@@ -36,7 +39,13 @@
             <div class="menu-container">
                 <h2 class="menu-title">GETRÄNKE</h2>
                 
-                <div class="menu-category">
+                <div class="sub-nav">
+                    <a href="#softdrinks">Softdrinks</a>
+                    <a href="#heisse-getraenke">Heiße Getränke</a>
+                    <a href="#kaffeespezialitaeten">Kaffeespezialitäten</a>
+                </div>
+                
+                <div class="menu-category" id="softdrinks">
                     <h3 class="category-title">SOFTDRINKS</h3>
                     
                     <ul class="menu-list">
@@ -94,10 +103,10 @@
                     </ul>
                 </div>
                 
-                <div class="menu-category" style="margin-top: 3rem;">
+                <div class="menu-category" id="heisse-getraenke" style="margin-top: 3rem;">
                     <div class="category-header" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">
                         <h3 class="category-title" style="margin-bottom: 0;">HEISSE GETRÄNKE</h3>
-                        <div style="color: var(--neon-orange); font-weight: 800; font-size: 1.1rem; text-shadow: 0 0 5px var(--neon-orange); display: flex; gap: 1rem; min-width: 150px; justify-content: flex-end;">
+                        <div style="color: var(--primary); font-weight: 800; font-size: 1.1rem; text-shadow: 0 0 5px var(--primary); display: flex; gap: 1rem; min-width: 150px; justify-content: flex-end;">
                             <span style="width: 70px; text-align: right;">NORMAL</span>
                             <span style="width: 70px; text-align: right;">GROSS</span>
                         </div>
@@ -149,14 +158,14 @@
                     </ul>
                 </div>
                 
-                <div class="menu-category" style="margin-top: 3rem;">
+                <div class="menu-category" id="kaffeespezialitaeten" style="margin-top: 3rem;">
                     <h3 class="category-title">KAFFEESPEZIALITÄTEN</h3>
                     <ul class="menu-list">
                         <li class="menu-item">
                             <span class="item-number">31</span>
                             <div class="item-name-group">
                                 <span>ICED AMERICANO<span style="font-size: 0.7rem; vertical-align: super;">9</span></span>
-                                <span style="font-size: 0.9rem; color: #aaa; text-transform: none; font-weight: normal;">Espresso, Wasser, Eis</span>
+                                <span style="font-size: 0.9rem; color: var(--text-color); text-transform: none; font-weight: normal;">Espresso, Wasser, Eis</span>
                             </div>
                             <span class="item-price">3,80 €</span>
                         </li>
@@ -164,7 +173,7 @@
                             <span class="item-number">32</span>
                             <div class="item-name-group">
                                 <span>ICED LATTE<span style="font-size: 0.7rem; vertical-align: super;">9,G</span></span>
-                                <span style="font-size: 0.9rem; color: #aaa; text-transform: none; font-weight: normal;">Espresso, Milch, Eis</span>
+                                <span style="font-size: 0.9rem; color: var(--text-color); text-transform: none; font-weight: normal;">Espresso, Milch, Eis</span>
                             </div>
                             <span class="item-price">4,30 €</span>
                         </li>
@@ -172,7 +181,7 @@
                             <span class="item-number">33</span>
                             <div class="item-name-group">
                                 <span>EISKAFFEE KLASSISCH<span style="font-size: 0.7rem; vertical-align: super;">9,G</span></span>
-                                <span style="font-size: 0.9rem; color: #aaa; text-transform: none; font-weight: normal;">Kaffee, Milch, Eis, Sahne</span>
+                                <span style="font-size: 0.9rem; color: var(--text-color); text-transform: none; font-weight: normal;">Kaffee, Milch, Eis, Sahne</span>
                             </div>
                             <span class="item-price">4,80 €</span>
                         </li>
@@ -200,7 +209,7 @@
             </div>
             <div class="footer-extra">
                 <div class="promo-box">
-                    <p>SCHENKEN MACHT GLÜCKLICH.<br><span style="color: var(--neon-orange); font-weight: bold;">GUTSCHEINE GIBT'S BEI UNS!</span></p>
+                    <p>SCHENKEN MACHT GLÜCKLICH.<br><span style="color: var(--primary); font-weight: bold;">GUTSCHEINE GIBT'S BEI UNS!</span></p>
                 </div>
                 <div class="service-box">
                     <p>BESTELLUNGEN & SERVICE:<br><span>RUFEN SIE UNS AN ODER FRAGEN SIE UNS VOR ORT.</span></p>
@@ -213,5 +222,6 @@
     </footer>
 
     <script src="js/main.js?v=5"></script>
+<button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">&#8679;</button>
 </body>
 </html>

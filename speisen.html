@@ -7,7 +7,7 @@
     <meta name="description" content="Unsere frischen Speisen und das monsterstarke Frühstück.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -26,7 +26,10 @@
                 <li><a href="index.html#home">Start</a></li>
                 <li><a href="getraenke.html">Getränke</a></li>
                 <li><a href="speisen.html">Speisen</a></li>
-                <li><a href="index.html#contact" class="btn-primary">Reservieren</a></li>
+                <li style="display: flex; flex-direction: column; align-items: center; gap: 2px;">
+                    <span class="btn-primary" style="opacity: 0.6; cursor: not-allowed;">Reservieren</span>
+                    <span style="font-size: 0.7rem; font-weight: bold; color: var(--primary); text-transform: uppercase;">Coming soon</span>
+                </li>
             </ul>
         </nav>
     </header>
@@ -34,16 +37,30 @@
     <main>
         <section class="menu-section" style="padding-top: 10rem;">
             <div class="menu-container">
-                <h2 class="menu-title">FRÜHSTÜCK & MORE <span style="font-size: 1rem; color: #fff; letter-spacing: 2px; text-shadow: none; border: none; box-shadow: none; vertical-align: middle; margin-left: 1rem;">06:00 - 13:00 UHR</span></h2>
+                                <div class="menu-tabs">
+                    <button class="menu-tab-btn active" onclick="switchTab('tab-fruehstueck', this)">FRÜHSTÜCK & MORE</button>
+                    <button class="menu-tab-btn" onclick="switchTab('tab-pizza', this)">PIZZA & EXTRAS</button>
+                    <button class="menu-tab-btn" onclick="switchTab('tab-dessert', this)">KAFFEE & KUCHEN</button>
+                </div>
                 
-                <div class="menu-category">
+                <div id="tab-fruehstueck" class="tab-content active">
+                    <div class="sub-nav" style="margin-bottom: 2rem;">
+                        <a href="#klassisch">Klassisch</a>
+                        <a href="#gruppen">Für Gruppen</a>
+                        <a href="#eiergerichte">Eiergerichte</a>
+                        <a href="#spezialitaeten">Spezialitäten</a>
+                        <a href="#sandwich">Sandwich</a>
+                    </div>
+
+
+                <div class="menu-category" id="klassisch">
                     <h3 class="category-title">KLASSISCH</h3>
                     <ul class="menu-list">
                         <li class="menu-item">
                             <span class="item-number">01</span>
                             <div class="item-name-group">
                                 <span>BROTZILLA-SPEZIAL FRÜHSTÜCK</span>
-                                <span style="font-size: 0.9rem; color: #aaa; text-transform: none; font-weight: normal; margin-top: 0.3rem;">Fladenbrot, Eier, gebratene Bratwurst, Feta Käse, Oliven, Walnüsse, Tomaten, Gurken, Tee nach Wahl...<span style="font-size: 0.6rem; vertical-align: super; color: #888;">2,3,6,7,A,C,G</span></span>
+                                <span style="font-size: 0.9rem; color: var(--text-color); text-transform: none; font-weight: normal; margin-top: 0.3rem;">Fladenbrot, Eier, gebratene Bratwurst, Feta Käse, Oliven, Walnüsse, Tomaten, Gurken, Tee nach Wahl...<span style="font-size: 0.6rem; vertical-align: super; color: var(--text-color);">2,3,6,7,A,C,G</span></span>
                             </div>
                             <span class="item-price">13,90 €</span>
                         </li>
@@ -51,7 +68,7 @@
                             <span class="item-number">02</span>
                             <div class="item-name-group">
                                 <span>CLASSIC FRÜHSTÜCK</span>
-                                <span style="font-size: 0.9rem; color: #aaa; text-transform: none; font-weight: normal; margin-top: 0.3rem;">Brötchen, Butter, Marmelade, Nutella, Honig, Gurken, Tomaten, Oliven, Salami, Frischkäse oder Gouda, Tee nach Wahl...<span style="font-size: 0.6rem; vertical-align: super; color: #888;">2,3,6,7,A,G</span></span>
+                                <span style="font-size: 0.9rem; color: var(--text-color); text-transform: none; font-weight: normal; margin-top: 0.3rem;">Brötchen, Butter, Marmelade, Nutella, Honig, Gurken, Tomaten, Oliven, Salami, Frischkäse oder Gouda, Tee nach Wahl...<span style="font-size: 0.6rem; vertical-align: super; color: var(--text-color);">2,3,6,7,A,G</span></span>
                             </div>
                             <span class="item-price">11,90 €</span>
                         </li>
@@ -59,36 +76,36 @@
                             <span class="item-number">03</span>
                             <div class="item-name-group">
                                 <span>SÜSSES FRÜHSTÜCK</span>
-                                <span style="font-size: 0.9rem; color: #aaa; text-transform: none; font-weight: normal; margin-top: 0.3rem;">Sesambrot (Simit), Butter, Marmelade, Nutella, Honig...<span style="font-size: 0.6rem; vertical-align: super; color: #888;">A,G</span></span>
+                                <span style="font-size: 0.9rem; color: var(--text-color); text-transform: none; font-weight: normal; margin-top: 0.3rem;">Sesambrot (Simit), Butter, Marmelade, Nutella, Honig...<span style="font-size: 0.6rem; vertical-align: super; color: var(--text-color);">A,G</span></span>
                             </div>
                             <span class="item-price">6,90 €</span>
                         </li>
                     </ul>
                 </div>
 
-                <div class="menu-category" style="margin-top: 3rem;">
+                <div class="menu-category" id="gruppen" style="margin-top: 3rem;">
                     <h3 class="category-title">FÜR GRUPPEN</h3>
                     <ul class="menu-list">
                         <li class="menu-item">
                             <span class="item-number">04</span>
                             <div class="item-name-group">
                                 <span>FRÜHSTÜCKSPLATTE</span>
-                                <span style="font-size: 0.9rem; color: #aaa; text-transform: none; font-weight: normal; margin-top: 0.3rem;">Heißgetränke, Orangensaft, Menemen oder Rührei mit Sucuk, Käse nach Wahl, Marmelade, Nutella, Honig, Butter, Oliven...<span style="font-size: 0.6rem; vertical-align: super; color: #888;">6,7,A,C,G</span></span>
-                                <span style="color: var(--neon-orange); font-weight: 800; font-size: 1.1rem; margin-top: 0.5rem;">2 PERSONEN: 25,90 € - 4 PERSONEN: 49,90 €</span>
+                                <span style="font-size: 0.9rem; color: var(--text-color); text-transform: none; font-weight: normal; margin-top: 0.3rem;">Heißgetränke, Orangensaft, Menemen oder Rührei mit Sucuk, Käse nach Wahl, Marmelade, Nutella, Honig, Butter, Oliven...<span style="font-size: 0.6rem; vertical-align: super; color: var(--text-color);">6,7,A,C,G</span></span>
+                                <span style="color: var(--primary); font-weight: 800; font-size: 1.1rem; margin-top: 0.5rem;">2 PERSONEN: 25,90 € - 4 PERSONEN: 49,90 €</span>
                             </div>
                             <span class="item-price"></span>
                         </li>
                     </ul>
                 </div>
 
-                <div class="menu-category" style="margin-top: 3rem;">
+                <div class="menu-category" id="eiergerichte" style="margin-top: 3rem;">
                     <h3 class="category-title">EIERGERICHTE</h3>
                     <ul class="menu-list">
                         <li class="menu-item">
                             <span class="item-number">05</span>
                             <div class="item-name-group">
                                 <span>MENEMEN</span>
-                                <span style="font-size: 0.9rem; color: #aaa; text-transform: none; font-weight: normal; margin-top: 0.3rem;">Zwiebeln, Tomaten, Paprika, Ei, Gouda - in der Pfanne, mit Brötchen, Tee nach Wahl...<span style="font-size: 0.6rem; vertical-align: super; color: #888;">A,C,G</span></span>
+                                <span style="font-size: 0.9rem; color: var(--text-color); text-transform: none; font-weight: normal; margin-top: 0.3rem;">Zwiebeln, Tomaten, Paprika, Ei, Gouda - in der Pfanne, mit Brötchen, Tee nach Wahl...<span style="font-size: 0.6rem; vertical-align: super; color: var(--text-color);">A,C,G</span></span>
                             </div>
                             <span class="item-price">7,90 €</span>
                         </li>
@@ -96,7 +113,7 @@
                             <span class="item-number">06</span>
                             <div class="item-name-group">
                                 <span>MENEMEN MIT SUCUK</span>
-                                <span style="font-size: 0.9rem; color: #aaa; text-transform: none; font-weight: normal; margin-top: 0.3rem;">Zwiebeln, Tomaten, Paprika, Ei, Gouda, Sucuk - in der Pfanne, mit Brötchen...<span style="font-size: 0.6rem; vertical-align: super; color: #888;">2,3,4,7,A,C,G</span></span>
+                                <span style="font-size: 0.9rem; color: var(--text-color); text-transform: none; font-weight: normal; margin-top: 0.3rem;">Zwiebeln, Tomaten, Paprika, Ei, Gouda, Sucuk - in der Pfanne, mit Brötchen...<span style="font-size: 0.6rem; vertical-align: super; color: var(--text-color);">2,3,4,7,A,C,G</span></span>
                             </div>
                             <span class="item-price">9,90 €</span>
                         </li>
@@ -104,7 +121,7 @@
                             <span class="item-number">07</span>
                             <div class="item-name-group">
                                 <span>SPIEGELEI</span>
-                                <span style="font-size: 0.9rem; color: #aaa; text-transform: none; font-weight: normal; margin-top: 0.3rem;">Zwei Spiegeleier - in der Pfanne, Gurken, Tomaten, Oliven mit Brötchen...<span style="font-size: 0.6rem; vertical-align: super; color: #888;">A,C,G</span></span>
+                                <span style="font-size: 0.9rem; color: var(--text-color); text-transform: none; font-weight: normal; margin-top: 0.3rem;">Zwei Spiegeleier - in der Pfanne, Gurken, Tomaten, Oliven mit Brötchen...<span style="font-size: 0.6rem; vertical-align: super; color: var(--text-color);">A,C,G</span></span>
                             </div>
                             <span class="item-price">6,90 €</span>
                         </li>
@@ -112,7 +129,7 @@
                             <span class="item-number">08</span>
                             <div class="item-name-group">
                                 <span>SPIEGELEI MIT SUCUK</span>
-                                <span style="font-size: 0.9rem; color: #aaa; text-transform: none; font-weight: normal; margin-top: 0.3rem;">Zwei Spiegeleier mit Sucuk - in der Pfanne, Gurken, Tomaten, Oliven mit Brötchen...<span style="font-size: 0.6rem; vertical-align: super; color: #888;">2,3,4,7,A,C,G</span></span>
+                                <span style="font-size: 0.9rem; color: var(--text-color); text-transform: none; font-weight: normal; margin-top: 0.3rem;">Zwei Spiegeleier mit Sucuk - in der Pfanne, Gurken, Tomaten, Oliven mit Brötchen...<span style="font-size: 0.6rem; vertical-align: super; color: var(--text-color);">2,3,4,7,A,C,G</span></span>
                             </div>
                             <span class="item-price">8,90 €</span>
                         </li>
@@ -120,7 +137,7 @@
                             <span class="item-number">09</span>
                             <div class="item-name-group">
                                 <span>RÜHREI</span>
-                                <span style="font-size: 0.9rem; color: #aaa; text-transform: none; font-weight: normal; margin-top: 0.3rem;">Zwei Eier - in der Pfanne, Gurken, Tomaten, Oliven mit Brötchen...<span style="font-size: 0.6rem; vertical-align: super; color: #888;">2,3,4,7,A,C,G</span></span>
+                                <span style="font-size: 0.9rem; color: var(--text-color); text-transform: none; font-weight: normal; margin-top: 0.3rem;">Zwei Eier - in der Pfanne, Gurken, Tomaten, Oliven mit Brötchen...<span style="font-size: 0.6rem; vertical-align: super; color: var(--text-color);">2,3,4,7,A,C,G</span></span>
                             </div>
                             <span class="item-price">6,90 €</span>
                         </li>
@@ -128,7 +145,7 @@
                             <span class="item-number">10</span>
                             <div class="item-name-group">
                                 <span>RÜHREI MIT SUCUK</span>
-                                <span style="font-size: 0.9rem; color: #aaa; text-transform: none; font-weight: normal; margin-top: 0.3rem;">Zwei Eier mit Sucuk - in der Pfanne, Gurken, Tomaten, Oliven mit Brötchen...<span style="font-size: 0.6rem; vertical-align: super; color: #888;">2,3,4,7,A,C,G</span></span>
+                                <span style="font-size: 0.9rem; color: var(--text-color); text-transform: none; font-weight: normal; margin-top: 0.3rem;">Zwei Eier mit Sucuk - in der Pfanne, Gurken, Tomaten, Oliven mit Brötchen...<span style="font-size: 0.6rem; vertical-align: super; color: var(--text-color);">2,3,4,7,A,C,G</span></span>
                             </div>
                             <span class="item-price">8,90 €</span>
                         </li>
@@ -136,21 +153,21 @@
                             <span class="item-number">11</span>
                             <div class="item-name-group">
                                 <span>SESAMBROT (SIMIT) SPEZIAL</span>
-                                <span style="font-size: 0.9rem; color: #aaa; text-transform: none; font-weight: normal; margin-top: 0.3rem;">Sesambrot(Simit), Gebratene Eier, Sucuk, Gouda Käse dazu Tomaten, Gurken Oliven...<span style="font-size: 0.6rem; vertical-align: super; color: #888;">2,3,4,7,A,C,G</span></span>
+                                <span style="font-size: 0.9rem; color: var(--text-color); text-transform: none; font-weight: normal; margin-top: 0.3rem;">Sesambrot(Simit), Gebratene Eier, Sucuk, Gouda Käse dazu Tomaten, Gurken Oliven...<span style="font-size: 0.6rem; vertical-align: super; color: var(--text-color);">2,3,4,7,A,C,G</span></span>
                             </div>
                             <span class="item-price">9,90 €</span>
                         </li>
                     </ul>
                 </div>
 
-                <div class="menu-category" style="margin-top: 3rem;">
+                <div class="menu-category" id="spezialitaeten" style="margin-top: 3rem;">
                     <h3 class="category-title">SPEZIALITÄTEN</h3>
                     <ul class="menu-list">
                         <li class="menu-item">
                             <span class="item-number">12</span>
                             <div class="item-name-group">
                                 <span>OMELETT IRANISCHER ART</span>
-                                <span style="font-size: 0.9rem; color: #aaa; text-transform: none; font-weight: normal; margin-top: 0.3rem;">Tomatenmark, Ei - in der Pfanne, Gurken, Oliven mit Fladenbrot, Tee nach Wahl...<span style="font-size: 0.6rem; vertical-align: super; color: #888;">6,7,A,C,G</span></span>
+                                <span style="font-size: 0.9rem; color: var(--text-color); text-transform: none; font-weight: normal; margin-top: 0.3rem;">Tomatenmark, Ei - in der Pfanne, Gurken, Oliven mit Fladenbrot, Tee nach Wahl...<span style="font-size: 0.6rem; vertical-align: super; color: var(--text-color);">6,7,A,C,G</span></span>
                             </div>
                             <span class="item-price">7,90 €</span>
                         </li>
@@ -158,21 +175,21 @@
                             <span class="item-number">13</span>
                             <div class="item-name-group">
                                 <span>OMELETT MIT KÄSE</span>
-                                <span style="font-size: 0.9rem; color: #aaa; text-transform: none; font-weight: normal; margin-top: 0.3rem;">Ei, Schnittlauch, Speck - in der Pfanne, Oliven, Gurken, Tomaten, mit Brötchen, Tee nach Wahl...<span style="font-size: 0.6rem; vertical-align: super; color: #888;">6,7,A,C,G</span></span>
+                                <span style="font-size: 0.9rem; color: var(--text-color); text-transform: none; font-weight: normal; margin-top: 0.3rem;">Ei, Schnittlauch, Speck - in der Pfanne, Oliven, Gurken, Tomaten, mit Brötchen, Tee nach Wahl...<span style="font-size: 0.6rem; vertical-align: super; color: var(--text-color);">6,7,A,C,G</span></span>
                             </div>
                             <span class="item-price">9,90 €</span>
                         </li>
                     </ul>
                 </div>
 
-                <div class="menu-category" style="margin-top: 3rem;">
+                <div class="menu-category" id="sandwich" style="margin-top: 3rem;">
                     <h3 class="category-title">SANDWICH</h3>
                     <ul class="menu-list">
                         <li class="menu-item">
                             <span class="item-number">14</span>
                             <div class="item-name-group">
                                 <span>VEGANES SANDWICH 🌱</span>
-                                <span style="font-size: 0.9rem; color: #aaa; text-transform: none; font-weight: normal; margin-top: 0.3rem;">Toastbrot, Hummus, Oliven, Tomaten, Gurken, frische Kräuter...<span style="font-size: 0.6rem; vertical-align: super; color: #888;">2,3,6,7,A</span></span>
+                                <span style="font-size: 0.9rem; color: var(--text-color); text-transform: none; font-weight: normal; margin-top: 0.3rem;">Toastbrot, Hummus, Oliven, Tomaten, Gurken, frische Kräuter...<span style="font-size: 0.6rem; vertical-align: super; color: var(--text-color);">2,3,6,7,A</span></span>
                             </div>
                             <span class="item-price">5,90 €</span>
                         </li>
@@ -180,17 +197,128 @@
                             <span class="item-number">15</span>
                             <div class="item-name-group">
                                 <span>BROTZILLA SANDWICH</span>
-                                <span style="font-size: 0.9rem; color: #aaa; text-transform: none; font-weight: normal; margin-top: 0.3rem;">Toastbrot, gekochte Eier, Gouda Käse, Avocado, Tomaten...<span style="font-size: 0.6rem; vertical-align: super; color: #888;">2,3,6,7,A,C,G</span></span>
+                                <span style="font-size: 0.9rem; color: var(--text-color); text-transform: none; font-weight: normal; margin-top: 0.3rem;">Toastbrot, gekochte Eier, Gouda Käse, Avocado, Tomaten...<span style="font-size: 0.6rem; vertical-align: super; color: var(--text-color);">2,3,6,7,A,C,G</span></span>
                             </div>
                             <span class="item-price">5,90 €</span>
                         </li>
                     </ul>
                 </div>
 
-                <div class="menu-category" style="margin-top: 4rem; text-align: center; background: rgba(0,0,0,0.4); padding: 2rem; border-radius: 12px; border: 1px solid var(--neon-peach);">
+                                </div> <!-- End tab-fruehstueck -->
+                
+                <div id="tab-pizza" class="tab-content">
+                    <div class="sub-nav" style="margin-bottom: 2rem;">
+                        <a href="#pizza">Pizza</a>
+                        <a href="#extras">Extras</a>
+                        <a href="#mittagsangebote">Angebote</a>
+                    </div>
+                <div class="menu-category" id="pizza" style="margin-top: 2rem;">
+
+                    <div class="category-header" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.5rem; border-bottom: 2px solid var(--text-color); padding-bottom: 0.5rem;">
+                        <h3 class="category-title" style="margin-bottom: 0; border: none; padding-bottom: 0;">PIZZA <span style="font-size: 1.2rem; font-weight: normal; color: var(--primary);">By Brotzilla</span></h3>
+                        <div style="color: var(--primary); font-family: var(--font-heading); font-size: 1.2rem; display: flex; gap: 0.5rem; justify-content: flex-end;">
+                            <span style="width: 60px; text-align: center; display: flex; flex-direction: column; line-height: 1.2;">KLEIN<span style="font-size:0.9rem; color: var(--text-color);">Ø 28</span></span>
+                            <span style="width: 60px; text-align: center; display: flex; flex-direction: column; line-height: 1.2;">GROSS<span style="font-size:0.9rem; color: var(--text-color);">Ø 32</span></span>
+                            <span style="width: 70px; text-align: right; display: flex; flex-direction: column; line-height: 1.2;">FAMILIE<span style="font-size:0.9rem; color: var(--text-color);">Ø 40</span></span>
+                        </div>
+                    </div>
+                    
+                    <ul class="menu-list">
+                        <li class="menu-item price-three-cols">
+                            <div class="item-name-group">
+                                <span>MARGHARITA<span style="font-size: 0.7rem; vertical-align: super; color: var(--text-color);">A,G</span></span>
+                                <span style="font-size: 0.9rem; color: var(--text-color); font-weight: normal;">Tomatensauce, Käse</span>
+                            </div>
+                            <div class="price-three-cols-wrapper"><span class="item-price" data-label="Klein">8,50 €</span><span class="item-price" data-label="Groß">10,50 €</span><span class="item-price" data-label="Familie">17,00 €</span></div>
+                        </li>
+                        <li class="menu-item price-three-cols">
+                            <div class="item-name-group">
+                                <span>SCHINKEN<span style="font-size: 0.7rem; vertical-align: super; color: var(--text-color);">A,G,13</span></span>
+                                <span style="font-size: 0.9rem; color: var(--text-color); font-weight: normal;">Tomatensauce, Käse, Schinken</span>
+                            </div>
+                            <div class="price-three-cols-wrapper"><span class="item-price" data-label="Klein">9,00 €</span><span class="item-price" data-label="Groß">11,00 €</span><span class="item-price" data-label="Familie">19,00 €</span></div>
+                        </li>
+                        <li class="menu-item price-three-cols">
+                            <div class="item-name-group">
+                                <span>SALAMI<span style="font-size: 0.7rem; vertical-align: super; color: var(--text-color);">A,G,2,3,13</span></span>
+                                <span style="font-size: 0.9rem; color: var(--text-color); font-weight: normal;">Tomatensauce, Käse, Salami</span>
+                            </div>
+                            <div class="price-three-cols-wrapper"><span class="item-price" data-label="Klein">9,00 €</span><span class="item-price" data-label="Groß">11,00 €</span><span class="item-price" data-label="Familie">19,00 €</span></div>
+                        </li>
+                        <li class="menu-item price-three-cols">
+                            <div class="item-name-group">
+                                <span>SUCUK<span style="font-size: 0.7rem; vertical-align: super; color: var(--text-color);">A,G,2,3,13</span></span>
+                                <span style="font-size: 0.9rem; color: var(--text-color); font-weight: normal;">Tomatensauce, Käse, Sucuk</span>
+                            </div>
+                            <div class="price-three-cols-wrapper"><span class="item-price" data-label="Klein">10,00 €</span><span class="item-price" data-label="Groß">12,00 €</span><span class="item-price" data-label="Familie">21,00 €</span></div>
+                        </li>
+                        <li class="menu-item price-three-cols">
+                            <div class="item-name-group">
+                                <span>FUNGHI<span style="font-size: 0.7rem; vertical-align: super; color: var(--text-color);">A,G</span></span>
+                                <span style="font-size: 0.9rem; color: var(--text-color); font-weight: normal;">Tomatensauce, Käse, Champignons</span>
+                            </div>
+                            <div class="price-three-cols-wrapper"><span class="item-price" data-label="Klein">9,00 €</span><span class="item-price" data-label="Groß">11,00 €</span><span class="item-price" data-label="Familie">19,00 €</span></div>
+                        </li>
+                        <li class="menu-item price-three-cols">
+                            <div class="item-name-group">
+                                <span>TUNA<span style="font-size: 0.7rem; vertical-align: super; color: var(--text-color);">A,G,D</span></span>
+                                <span style="font-size: 0.9rem; color: var(--text-color); font-weight: normal;">Tomatensauce, Käse, Thunfisch, Zwiebeln</span>
+                            </div>
+                            <div class="price-three-cols-wrapper"><span class="item-price" data-label="Klein">10,00 €</span><span class="item-price" data-label="Groß">11,00 €</span><span class="item-price" data-label="Familie">20,00 €</span></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="menu-category" id="extras" style="margin-top: 3rem;">
+                    <h3 class="category-title">EXTRAS</h3>
+                    <ul class="menu-list">
+                        <li class="menu-item price-three-cols">
+                            <div class="item-name-group">
+                                <span style="color: var(--primary);">Extra Zutaten auf Wunsch</span>
+                                <span style="font-size: 0.85rem; color: var(--text-color); font-weight: normal;">Schinken, Salami, Putenschinken, Zwiebel, Pilze, Paprika, Knoblauch, Oliven, Mais.</span>
+                            </div>
+                            <div class="price-three-cols-wrapper"><span class="item-price" data-label="Klein">1,00 €</span><span class="item-price" data-label="Groß">1,50 €</span><span class="item-price" data-label="Familie">2,00 €</span></div>
+                        </li>
+                        <li class="menu-item price-three-cols">
+                            <div class="item-name-group">
+                                <span style="color: var(--primary);">Pizza mit Käserandfüllung</span>
+                            </div>
+                            <div class="price-three-cols-wrapper"><span class="item-price" data-label="Klein">2,00 €</span><span class="item-price" data-label="Groß">2,50 €</span><span class="item-price" data-label="Familie">3,00 €</span></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="menu-category" id="mittagsangebote" style="margin-top: 3rem;">
+                    <h3 class="category-title" style="border: none; margin-bottom: 0;">MITTAGSANGEBOTE</h3>
+                    <p style="color: var(--primary); font-weight: bold; margin-bottom: 1.5rem; text-transform: uppercase;">DI - Fr : 11:00 - 15:00 Uhr</p>
+                    
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <div class="highlight-box" style="flex: 1; min-width: 250px; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem !important;">
+                            <div style="font-weight: 800; line-height: 1.3;">Pizza Ø 28 mit 3<br>Zutaten +<br>Beilagensalat</div>
+                            <div style="text-align: right;">
+                                <div style="font-family: var(--font-heading); font-size: 2.5rem; line-height: 1;">9,00 €</div>
+                                <div style="font-size: 0.7rem; opacity: 0.7;">zzgl. Lieferkosten</div>
+                            </div>
+                        </div>
+                        <div class="highlight-box" style="flex: 1; min-width: 250px; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem !important;">
+                            <div style="font-weight: 800; line-height: 1.3;">Pizza Ø 32 mit 3<br>Zutaten +<br>Beilagensalat</div>
+                            <div style="text-align: right;">
+                                <div style="font-family: var(--font-heading); font-size: 2.5rem; line-height: 1;">11,00 €</div>
+                                <div style="font-size: 0.7rem; opacity: 0.7;">zzgl. Lieferkosten</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                                </div> <!-- End tab-pizza -->
+                
+                <div id="tab-dessert" class="tab-content">
+                <div class="menu-category highlight-box" id="torten-dessert" style="margin-top: 2rem; text-align: center; padding: 2rem; border-radius: 12px;">
+
                     <h2 class="menu-title" style="margin-bottom: 1rem; border: none; box-shadow: none;">TORTEN & DESSERT</h2>
                     <p style="font-size: 1.2rem; margin-bottom: 0;">Kuchen & Torten im wechselnden Angebot.<br>Sprechen Sie uns gerne an.</p>
                 </div>
+                </div> <!-- End tab-dessert -->
             </div>
         </section>
     </main>
@@ -213,7 +341,7 @@
             </div>
             <div class="footer-extra">
                 <div class="promo-box">
-                    <p>SCHENKEN MACHT GLÜCKLICH.<br><span style="color: var(--neon-orange); font-weight: bold;">GUTSCHEINE GIBT'S BEI UNS!</span></p>
+                    <p>SCHENKEN MACHT GLÜCKLICH.<br><span style="color: var(--primary); font-weight: bold;">GUTSCHEINE GIBT'S BEI UNS!</span></p>
                 </div>
                 <div class="service-box">
                     <p>BESTELLUNGEN & SERVICE:<br><span>RUFEN SIE UNS AN ODER FRAGEN SIE UNS VOR ORT.</span></p>
@@ -226,5 +354,6 @@
     </footer>
 
     <script src="js/main.js?v=5"></script>
+<button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">&#8679;</button>
 </body>
 </html>

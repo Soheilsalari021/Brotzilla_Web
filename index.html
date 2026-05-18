@@ -7,7 +7,7 @@
     <meta name="description" content="Deine Bäckerei für monsterstarkes Frühstück und frisches Brot.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -26,7 +26,10 @@
                 <li><a href="index.html#home">Start</a></li>
                 <li><a href="getraenke.html">Getränke</a></li>
                 <li><a href="speisen.html">Speisen</a></li>
-                <li><a href="#contact" class="btn-primary">Reservieren</a></li>
+                <li style="display: flex; flex-direction: column; align-items: center; gap: 2px;">
+                    <span class="btn-primary" style="opacity: 0.6; cursor: not-allowed;">Reservieren</span>
+                    <span style="font-size: 0.7rem; font-weight: bold; color: var(--primary); text-transform: uppercase;">Coming soon</span>
+                </li>
             </ul>
         </nav>
     </header>
@@ -35,25 +38,41 @@
         <section id="home" class="hero">
             <div class="hero-slider-wrapper">
                 <div class="hero-slider" id="hero-slider">
-                    <div class="slide active" style="background-image: url('img/IMG_4366.JPG');"></div>
-                    <div class="slide" style="background-image: url('img/IMG_4379.JPG');"></div>
-                    <div class="slide" style="background-image: url('img/IMG_4387.JPG');"></div>
-                    <div class="slide" style="background-image: url('img/IMG_4391.JPG');"></div>
-                    <div class="slide" style="background-image: url('img/slider_bread.png');"></div>
-                    <div class="slide" style="background-image: url('img/slider_breakfast.png');"></div>
-                    <div class="slide" style="background-image: url('img/slider_pastry.png');"></div>
+                    <div class="slide active" style="background-image: url('img/IMG_4366.JPG');">
+                        <div class="hero-text-overlay">
+                            <h1>Frühstück</h1>
+                            <p>Unser monsterstarkes Frühstück für den perfekten Start in den Tag.</p>
+                        </div>
+                    </div>
+                    <div class="slide" style="background-image: url('img/IMG_4379.JPG');">
+                        <div class="hero-text-overlay">
+                            <h1>Pizza und Burger</h1>
+                            <p>Herzhaft und frisch zubereitet für deinen Hunger am Mittag.</p>
+                        </div>
+                    </div>
+                    <div class="slide" style="background-image: url('img/IMG_4387.JPG');">
+                        <div class="hero-text-overlay">
+                            <h1>Bäckerei</h1>
+                            <p>Täglich frisches Brot und handgemachte Backwaren mit Liebe gebacken.</p>
+                        </div>
+                    </div>
+                    <div class="slide" style="background-image: url('img/IMG_4391.JPG');">
+                        <div class="hero-text-overlay">
+                            <h1>Unser Restaurant</h1>
+                            <p>Viel Platz zum Sitzen und Wohlfühlen in unserem einzigartigen Ambiente.</p>
+                        </div>
+                    </div>
                 </div>
                 <button class="slider-btn slider-btn-left" id="slider-prev">&#8249;</button>
                 <button class="slider-btn slider-btn-right" id="slider-next">&#8250;</button>
                 <div class="slider-dots" id="slider-dots"></div>
-                <div class="hero-text-overlay">
-                    <h1>Monsterstarker Geschmack</h1>
-                    <p>Frisches Brot, handgemachte Backwaren und ein Frühstück, das selbst ein Monster satt macht. Besuche uns im Dschungel des Geschmacks.</p>
-                </div>
             </div>
             <div class="hero-buttons">
                 <a href="speisen.html" class="btn-primary">Zu den Speisen</a>
-                <a href="#contact" class="btn-secondary">Tisch reservieren</a>
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
+                    <span class="btn-secondary" style="opacity: 0.6; cursor: not-allowed;">Tisch reservieren</span>
+                    <span style="font-size: 0.85rem; font-weight: bold; color: #fff; letter-spacing: 1px; text-transform: uppercase; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Coming soon</span>
+                </div>
             </div>
         </section>
 
@@ -81,7 +100,7 @@
                 </div>
                 <div class="location-info reveal-right">
                     <h3>Brotzilla Bäckerei</h3>
-                    <p>Gabelsbergerstr. 2<br>74074 Heilbronn<br><span style="color: var(--neon-peach);">(direkt neben Aldi)</span></p>
+                    <p>Gabelsbergerstr. 2<br>74074 Heilbronn<br><span style="color: var(--text-color);">(direkt neben Aldi)</span></p>
                     <a href="https://www.google.com/maps/dir/?api=1&destination=Gabelsbergerstraße+2,+74074+Heilbronn" target="_blank" class="btn-primary"><img src="img/Google_Maps_icon_(2020).svg.png" alt="Google Maps" style="height:18px; width:auto; vertical-align:middle;"> Anfahrt planen</a>
                 </div>
             </div>
@@ -107,7 +126,7 @@
             </div>
             <div class="footer-extra reveal delay-3">
                 <div class="promo-box">
-                    <p>SCHENKEN MACHT GLÜCKLICH.<br><span style="color: var(--neon-orange); font-weight: bold;">GUTSCHEINE GIBT'S BEI UNS!</span></p>
+                    <p>SCHENKEN MACHT GLÜCKLICH.<br><span style="color: var(--primary); font-weight: bold;">GUTSCHEINE GIBT'S BEI UNS!</span></p>
                 </div>
                 <div class="service-box">
                     <p>BESTELLUNGEN & SERVICE:<br><span>RUFEN SIE UNS AN ODER FRAGEN SIE UNS VOR ORT.</span></p>
@@ -120,5 +139,6 @@
     </footer>
 
     <script src="js/main.js?v=5"></script>
+<button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">&#8679;</button>
 </body>
 </html>
