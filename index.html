@@ -10,7 +10,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet"></noscript>
     <link rel="preload" href="img/SVG/1.webp" as="image" fetchpriority="high">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+    <style>
+        body{margin:0;background:#f4f1e1;font-family:'Outfit',sans-serif;overflow-x:hidden}
+        .navbar{display:flex;justify-content:space-between;align-items:center;padding:1rem 5%;position:fixed;width:100%;top:0;z-index:1000;box-sizing:border-box}
+        .hero{min-height:100vh;display:flex;flex-direction:column;padding-top:5rem;overflow:hidden;position:relative}
+        .hero-slider-wrapper{position:relative;flex:1;min-height:60vh;overflow:hidden}
+        .hero-slider{position:absolute;inset:0;z-index:0}
+        .hero-slider .slide{position:absolute;inset:0;opacity:0;overflow:hidden}
+        .hero-slider .slide.active{opacity:1}
+        .slide-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    </style>
 </head>
 <body>
     <header class="navbar">
@@ -39,21 +50,21 @@
             <div class="hero-slider-wrapper">
                 <div class="hero-slider" id="hero-slider">
                     <div class="slide active">
-                        <img src="img/SVG/1.webp" class="slide-img" alt="Frühstück bei Brotzilla Heilbronn" fetchpriority="high" loading="eager">
+                        <img src="img/SVG/1.webp" class="slide-img" alt="Frühstück bei Brotzilla Heilbronn" fetchpriority="high" loading="eager" width="1200" height="800" decoding="sync">
                         <div class="hero-text-overlay">
                             <h1>Frühstück</h1>
                             <p>Unser monsterstarkes Frühstück für den perfekten Start in den Tag.</p>
                         </div>
                     </div>
                     <div class="slide">
-                        <img src="img/SVG/2.webp" class="slide-img" alt="Pizza und Burger bei Brotzilla Heilbronn" loading="lazy">
+                        <img src="img/SVG/2.webp" class="slide-img" alt="Pizza und Burger bei Brotzilla Heilbronn" loading="lazy" width="1200" height="800" decoding="async">
                         <div class="hero-text-overlay">
                             <h1>Pizza & Burger</h1>
                             <p>Herzhaft und frisch zubereitet für deinen Hunger.</p>
                         </div>
                     </div>
                     <div class="slide">
-                        <img src="img/IMG_4373.webp" class="slide-img" alt="Brotzilla Restaurant Heilbronn" loading="lazy">
+                        <img src="img/IMG_4373.webp" class="slide-img" alt="Brotzilla Restaurant Heilbronn" loading="lazy" width="1200" height="800" decoding="async">
                         <div class="hero-text-overlay">
                             <h1>Unser Restaurant</h1>
                             <p>Viel Platz zum Sitzen und Wohlfühlen in unserem einzigartigen Ambiente.</p>
@@ -131,7 +142,7 @@
                 <div class="location-info reveal-right">
                     <h3>Brotzilla Bäckerei</h3>
                     <p>Gabelsbergerstr. 2<br>74074 Heilbronn<br><span style="color: var(--text-color);">(direkt neben Aldi)</span></p>
-                    <a href="https://www.google.com/maps/dir/?api=1&destination=Gabelsbergerstraße+2,+74074+Heilbronn" target="_blank" class="btn-primary"><img src="img/Google_Maps_icon_(2020).svg.webp" alt="Google Maps" style="height:18px; width:auto; vertical-align:middle;"> Anfahrt planen</a>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=Gabelsbergerstraße+2,+74074+Heilbronn" target="_blank" class="btn-primary"><svg width="16" height="16" viewBox="0 0 24 24" style="vertical-align:middle;margin-right:5px;" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#EA4335"/><circle cx="12" cy="9" r="2.5" fill="white"/></svg> Anfahrt planen</a>
                 </div>
             </div>
         </section>
