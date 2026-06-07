@@ -347,6 +347,128 @@ p {
     font-weight: 600;
 }
 
+/* ── Cookie Banner ── */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: rgba(5, 5, 5, 0.97);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(209,93,32,0.3);
+    padding: 1.2rem 5%;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cookie-banner.visible {
+    transform: translateY(0);
+}
+
+.cookie-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.cookie-text {
+    flex: 1;
+    min-width: 260px;
+}
+
+.cookie-text strong {
+    color: var(--neon-yellow);
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.cookie-text p {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.8rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.cookie-text a {
+    color: var(--neon-orange);
+    text-decoration: none;
+}
+
+.cookie-text a:hover {
+    text-decoration: underline;
+}
+
+.cookie-actions {
+    display: flex;
+    gap: 0.8rem;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+}
+
+.cookie-btn {
+    padding: 0.6rem 1.4rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.cookie-btn-decline {
+    background: transparent;
+    color: rgba(255,255,255,0.5);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.cookie-btn-decline:hover {
+    border-color: rgba(255,255,255,0.5);
+    color: #fff;
+}
+
+.cookie-btn-accept {
+    background: var(--neon-orange);
+    color: #000;
+    border: 1.5px solid var(--neon-orange);
+    box-shadow: 0 0 16px rgba(209,93,32,0.4);
+}
+
+.cookie-btn-accept:hover {
+    box-shadow: 0 0 24px rgba(209,93,32,0.6);
+    transform: translateY(-1px);
+}
+
+/* Maps Placeholder */
+.maps-placeholder {
+    display: none;
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 16px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+.maps-placeholder p {
+    color: rgba(255,255,255,0.4);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
 /* ── Reviews Section ── */
 .reviews-section {
     padding: 5rem 5%;
@@ -502,6 +624,7 @@ p {
 
 .menu-category {
     margin-bottom: 3.5rem;
+    scroll-margin-top: 160px;
 }
 
 .category-title {
@@ -833,6 +956,23 @@ p {
     align-items: center;
 }
 
+.menu-item.price-four-cols {
+    grid-template-columns: 36px 1fr auto;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+.price-four-cols-wrapper {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.price-four-cols-wrapper .item-price {
+    min-width: 52px;
+    text-align: right;
+    font-size: 0.95rem;
+}
+
 @media (max-width: 768px) {
     .menu-item.price-three-cols {
         grid-template-columns: 1fr 50px 50px 55px;
@@ -949,6 +1089,43 @@ p {
         font-size: 0.7rem;
         color: var(--text-color);
         font-weight: normal;
+        margin-bottom: 2px;
+    }
+
+    .menu-item.price-four-cols {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .menu-item.price-four-cols .item-number {
+        display: inline;
+        margin-right: 0.4rem;
+    }
+
+    .price-four-cols-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding-top: 0.4rem;
+        border-top: 1px dashed rgba(255,255,255,0.08);
+    }
+
+    .price-four-cols-wrapper .item-price {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        font-size: 0.88rem;
+        min-width: 0;
+        flex: 1;
+    }
+
+    .price-four-cols-wrapper .item-price::before {
+        content: attr(data-label);
+        font-size: 0.6rem;
+        color: rgba(26,60,40,0.55);
+        font-weight: 400;
         margin-bottom: 2px;
     }
 }

@@ -98,7 +98,14 @@
             <h2 class="menu-title location-title reveal">HIER FINDEST DU UNS</h2>
             <div class="location-grid">
                 <div class="location-map reveal-left">
-                    <iframe src="https://maps.google.com/maps?q=Gabelsbergerstra%C3%9Fe%202,%2074074%20Heilbronn&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe id="maps-iframe"
+                        data-src="https://maps.google.com/maps?q=Gabelsbergerstra%C3%9Fe%202,%2074074%20Heilbronn&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        width="100%" height="100%" style="border:0; display:block;"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div id="maps-placeholder" class="maps-placeholder">
+                        <p>🗺️ Karte wird nach Cookie-Zustimmung angezeigt</p>
+                        <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">Akzeptieren & Karte laden</button>
+                    </div>
                 </div>
                 <div class="location-info reveal-right">
                     <h3>Brotzilla Bäckerei</h3>
@@ -120,10 +127,8 @@
             <div class="footer-hours reveal delay-2">
                 <h3>Öffnungszeiten:</h3>
                 <ul>
-                    <li><span>Dienstag - Freitag</span><span>07:00 - 18:00 Uhr</span></li>
-                    <li><span>Samstag</span><span>07:30 - 18:00 Uhr</span></li>
-                    <li><span>Sonntag</span><span>07:30 - 15:00 Uhr</span></li>
-                    <li class="closed"><span>Montag</span><span>geschlossen</span></li>
+                    <li><span>Dienstag - Sonntag</span><span>10:30 - 22:00 Uhr</span></li>
+                    <li class="closed"><span>Montag</span><span>Ruhetag</span></li>
                 </ul>
             </div>
             <div class="footer-extra reveal delay-3">
@@ -140,7 +145,20 @@
         </div>
     </footer>
 
-    <script src="js/main.js?v=5"></script>
-    <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">&#8679;</button>
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner" aria-live="polite">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <strong>Diese Website verwendet Cookies</strong>
+                <p>Wir nutzen Google Maps und Google Bewertungen. Diese Dienste können Cookies setzen und Daten an Google übermitteln. Mehr dazu in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+            </div>
+            <div class="cookie-actions">
+                <button id="cookie-decline" class="cookie-btn cookie-btn-decline">Nur notwendige</button>
+                <button id="cookie-accept" class="cookie-btn cookie-btn-accept">Alle akzeptieren</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js?v=6"></script>
 </body>
 </html>
