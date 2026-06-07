@@ -1,6 +1,6 @@
 // ── Konfiguration ──
-const GOOGLE_API_KEY = 'AIzaSyDg3Bp8_PmkD9vi5UApN_3qihT0UCWpDiA';
-const PLACE_ID       = 'ChIJMaH56hgvmEcRP4MMML00W54';
+// Hinweis: API-Schlüssel dürfen nicht clientseitig eingebettet werden.
+// Serverless-Endpoint `/api/reviews` liefert die Bewertungen sicher vom Server.
 const CONSENT_KEY    = 'brotzilla_cookie_consent';
 const CACHE_KEY      = 'brotzilla_reviews_cache';
 const ONE_WEEK       = 7 * 24 * 60 * 60 * 1000;
@@ -174,40 +174,70 @@ function renderReviews(data) {
     const grid     = document.getElementById('reviews-grid');
     if (!grid) return;
 
-    if (data.rating) {
-        if (ratingEl) ratingEl.textContent = data.rating.toFixed(1);
-        if (starsEl)  starsEl.textContent  = starsHTML(data.rating);
-    }
+    if (data.rating && ratingEl) ratingEl.textContent = data.rating.toFixed(1);
+    if (data.rating && starsEl)  starsEl.textContent  = starsHTML(data.rating);
+
     const total = data.userRatingCount;
     if (total && countEl) countEl.textContent = `${total} Bewertung${total !== 1 ? 'en' : ''} auf Google`;
 
     const reviews = data.reviews || [];
+    grid.innerHTML = ''; // safe clear
     if (!reviews.length) {
-        grid.innerHTML = '<p class="reviews-loading">Noch keine Bewertungen vorhanden.</p>';
+        const p = document.createElement('p');
+        p.className = 'reviews-loading';
+        p.textContent = 'Noch keine Bewertungen vorhanden.';
+        grid.appendChild(p);
         return;
     }
 
-    grid.innerHTML = reviews.map(r => {
+    reviews.forEach(r => {
         const name  = r.authorAttribution?.displayName || 'Gast';
         const photo = r.authorAttribution?.photoUri    || '';
         const time  = r.relativePublishTimeDescription || '';
         const text  = r.text?.text || '';
         const stars = r.rating || 5;
-        return `
-        <div class="review-card reveal">
-            <div class="review-header">
-                <img class="review-avatar" src="${photo}" alt="${name}" onerror="this.style.display='none'">
-                <div>
-                    <div class="review-author">${name}</div>
-                    <div class="review-date">${time}</div>
-                </div>
-            </div>
-            <div class="review-stars">${starsHTML(stars)}</div>
-            ${text ? `<p class="review-text">${text}</p>` : ''}
-        </div>`;
-    }).join('');
 
-    grid.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+        const card = document.createElement('div');
+        card.className = 'review-card reveal';
+
+        const header = document.createElement('div');
+        header.className = 'review-header';
+
+        const img = document.createElement('img');
+        img.className = 'review-avatar';
+        if (photo) img.src = photo;
+        img.alt = name;
+        img.onerror = function() { this.style.display = 'none'; };
+
+        const info = document.createElement('div');
+        const author = document.createElement('div');
+        author.className = 'review-author';
+        author.textContent = name;
+        const date = document.createElement('div');
+        date.className = 'review-date';
+        date.textContent = time;
+
+        info.appendChild(author);
+        info.appendChild(date);
+        header.appendChild(img);
+        header.appendChild(info);
+
+        const starsElLocal = document.createElement('div');
+        starsElLocal.className = 'review-stars';
+        starsElLocal.textContent = starsHTML(stars);
+
+        card.appendChild(header);
+        card.appendChild(starsElLocal);
+        if (text) {
+            const p = document.createElement('p');
+            p.className = 'review-text';
+            p.textContent = text;
+            card.appendChild(p);
+        }
+
+        grid.appendChild(card);
+        revealObserver.observe(card);
+    });
 }
 
 async function loadGoogleReviews() {
@@ -225,8 +255,8 @@ async function loadGoogleReviews() {
 
     // Neu von Google holen
     try {
-        const url = `https://places.googleapis.com/v1/places/${PLACE_ID}?fields=rating,userRatingCount,reviews&languageCode=de&key=${GOOGLE_API_KEY}`;
-        const res = await fetch(url, { headers: { 'X-Goog-Api-Key': GOOGLE_API_KEY } });
+        // Hole Bewertungen über den serverseitigen Endpoint (API-Key bleibt auf dem Server)
+        const res = await fetch('/api/reviews');
         if (!res.ok) throw new Error(res.status);
         const data = await res.json();
         localStorage.setItem(CACHE_KEY, JSON.stringify({ timestamp: Date.now(), data }));
@@ -250,14 +280,20 @@ function switchTab(tabId, btn) {
 window.switchTab = switchTab;
 
 // ── Scroll To Top ──
-const scrollTopBtn = document.getElementById('scrollTopBtn');
-if (scrollTopBtn) {
-    window.addEventListener('scroll', () => {
-        scrollTopBtn.classList.toggle('visible', window.scrollY > 300);
-    });
-}
 function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
 window.scrollToTop = scrollToTop;
+
+document.addEventListener('DOMContentLoaded', () => {
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    if (!scrollTopBtn) return;
+
+    // toggle visibility on scroll
+    const onScroll = () => scrollTopBtn.classList.toggle('visible', window.scrollY > 300);
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // initial state
+    onScroll();
+});
 
 // ── Start ──
 initCookieBanner();

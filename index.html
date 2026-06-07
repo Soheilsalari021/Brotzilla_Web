@@ -10,8 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet"></noscript>
     <link rel="preload" href="img/SVG/1.webp" as="image" fetchpriority="high">
-    <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+    <link rel="stylesheet" href="css/style.css">
+    
+    
     <style>
         body{margin:0;background:#f4f1e1;font-family:'Outfit',sans-serif;overflow-x:hidden}
         .navbar{display:flex;justify-content:space-between;align-items:center;padding:1rem 5%;position:fixed;width:100%;top:0;z-index:1000;box-sizing:border-box}
@@ -20,14 +21,14 @@
         .hero-slider{position:absolute;inset:0;z-index:0}
         .hero-slider .slide{position:absolute;inset:0;opacity:0;overflow:hidden}
         .hero-slider .slide.active{opacity:1}
-        .slide-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+        .slide-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.logo{display:flex;align-items:center;gap:.4rem;text-decoration:none}.logo-img{height:44px;width:auto;object-fit:contain}
     </style>
 </head>
 <body>
     <header class="navbar">
         <a href="index.html" class="logo">
-            <img src="img/Element 2@2x.png" alt="Brotzilla Icon" class="logo-img" width="465" height="515">
-            <img src="img/Element 1@2x.webp" alt="Brotzilla" class="logo-img" width="929" height="274">
+            <img src="img/Element 2@2x.png" alt="Brotzilla Icon" class="logo-img" width="40" height="44">
+            <img src="img/Element 1@2x.webp" alt="Brotzilla" class="logo-img" width="149" height="44">
         </a>
         <nav>
             <div class="mobile-menu-toggle" id="mobile-menu">
@@ -98,14 +99,14 @@
                     Ob zum Mittag, Abendessen oder gemütlichen Kaffee – bei uns bist du richtig.
                 </p>
                 <div class="about-chips">
-                    <span>Pizza</span>
-                    <span>Burger</span>
-                    <span>Frühstück</span>
-                    <span>Salate</span>
-                    <span>Café</span>
-                    <span>Sandwich</span>
-                    <span>Fastfood</span>
-                    <span>Kuchen</span>
+                    <a href="speisen.html#pizza">Pizza</a>
+                    <a href="speisen.html#burger">Burger</a>
+                    <a href="speisen.html#tab-fruehstueck">Frühstück</a>
+                    <a href="speisen.html#salate">Salate</a>
+                    <a href="speisen.html#tab-dessert">Café</a>
+                    <a href="speisen.html#sandwich">Sandwich</a>
+                    <a href="speisen.html#fastfood">Fastfood</a>
+                    <a href="speisen.html#torten-dessert">Kuchen</a>
                 </div>
             </div>
         </section>

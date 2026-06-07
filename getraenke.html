@@ -13,8 +13,8 @@
 <body>
     <header class="navbar">
         <a href="index.html" class="logo">
-            <img src="img/Element 2@2x.png" alt="Brotzilla Icon" class="logo-img" width="465" height="515">
-            <img src="img/Element 1@2x.webp" alt="Brotzilla" class="logo-img" width="929" height="274">
+            <img src="img/Element 2@2x.png" alt="Brotzilla Icon" class="logo-img" width="40" height="44">
+            <img src="img/Element 1@2x.webp" alt="Brotzilla" class="logo-img" width="149" height="44">
         </a>
         <nav>
             <div class="mobile-menu-toggle" id="mobile-menu">
@@ -228,6 +228,11 @@
     </footer>
 
     <script src="js/main.js?v=7"></script>
-<button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">&#8679;</button>
+<button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()" data-label="Nach oben" aria-label="Nach oben">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <path d="M6 15l6-6 6 6" stroke="#0b2a1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="scroll-top-label">Nach oben</span>
+</button>
 </body>
 </html>

@@ -5,10 +5,17 @@
     --primary: #d96c27; /* Kräftiges Flyer-Orange/Rostrot */
     --primary-hover: #b8551b;
     --highlight: #f2a93b; /* Gelb-Orange für Mittagsangebote */
+    /* Zusätzliche Akzentfarben für Banner / Neon-Buttons */
+    --neon-orange: #f39c12;
+    --neon-yellow: #f2a93b;
+    --neon-peach: #ffb086;
     --glass-border: rgba(26, 60, 40, 0.1);
     --font-main: 'Outfit', sans-serif;
     --font-heading: 'Bebas Neue', sans-serif;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* navbar height used for calculating sticky offsets */
+    --navbar-height: 88px;
+    --navbar-height-mobile: 64px;
 }
 
 * {
@@ -444,7 +451,7 @@ p {
 .cookie-actions {
     display: flex;
     gap: 0.8rem;
-    flex-shrink: 0;
+    flex-shrink: 1;
     flex-wrap: wrap;
 }
 
@@ -459,6 +466,9 @@ p {
     border: none;
     transition: all 0.3s ease;
     white-space: nowrap;
+
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .cookie-btn-decline {
@@ -473,15 +483,50 @@ p {
 }
 
 .cookie-btn-accept {
-    background: var(--neon-orange);
-    color: #000;
-    border: 1.5px solid var(--neon-orange);
-    box-shadow: 0 0 16px rgba(209,93,32,0.4);
+    background: linear-gradient(90deg, var(--neon-orange), var(--primary));
+    color: #fff;
+    border: 1.5px solid rgba(255,255,255,0.08);
+    box-shadow: 0 8px 24px rgba(217,93,32,0.28);
+    padding: 0.7rem 1.6rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.3);
 }
 
 .cookie-btn-accept:hover {
-    box-shadow: 0 0 24px rgba(209,93,32,0.6);
-    transform: translateY(-1px);
+    box-shadow: 0 10px 30px rgba(217,93,32,0.36);
+    transform: translateY(-2px);
+}
+
+.cookie-btn-accept:focus {
+    outline: 3px solid rgba(243,156,18,0.18);
+    outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+    .cookie-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.6rem;
+    }
+
+    .cookie-text {
+        margin-bottom: 0.4rem;
+    }
+
+    .cookie-actions {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.6rem;
+    }
+
+    .cookie-btn {
+        width: 100%;
+        white-space: normal;
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+    }
 }
 
 /* Maps Placeholder */
@@ -558,7 +603,8 @@ p {
     margin-top: 2rem;
 }
 
-.about-chips span {
+.about-chips span,
+.about-chips a {
     background: rgba(26,60,40,0.06);
     border: 1px solid rgba(26,60,40,0.15);
     border-radius: 9999px;
@@ -566,6 +612,15 @@ p {
     font-size: 0.85rem;
     color: var(--text-color);
     letter-spacing: 0.5px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-chips a:hover {
+    background: rgba(26,60,40,0.09);
+    border-color: rgba(26,60,40,0.25);
 }
 
 /* ── Reviews Section ── */
@@ -723,7 +778,8 @@ p {
 
 .menu-category {
     margin-bottom: 3.5rem;
-    scroll-margin-top: 160px;
+    /* Reserve space for fixed navbar + sticky sub-nav when jumping to anchors */
+    scroll-margin-top: 120px;
 }
 
 .category-title {
@@ -920,6 +976,17 @@ p {
     font-size: 0.9rem;
 }
 
+.footer-bottom a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-bottom a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
 /* ── Utility Classes ── */
 @media (min-width: 769px) {
     .mobile-only {
@@ -1020,24 +1087,33 @@ p {
     flex-wrap: wrap;
     gap: 0.8rem;
     justify-content: center;
-    margin-bottom: 3rem;
-    padding: 1rem 0;
+    margin-bottom: 1.25rem;
+    /* give a small visual gap and don't stick flush to the viewport */
+    margin-top: 10px;
+    padding: 0.6rem 0.75rem;
     position: sticky;
-    top: 75px;
-    background: rgba(244, 241, 225, 0.98);
+    /* sit lower than the navbar so it doesn't touch the top edge */
+    top: calc(var(--navbar-height) + 12px);
+    background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,248,244,0.98));
     z-index: 100;
-    border-bottom: 1px dashed rgba(26, 60, 40, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(12,22,16,0.06);
+    border: 1px solid rgba(26,60,40,0.04);
 }
 
 .sub-nav a {
     text-decoration: none;
     color: var(--text-color);
-    font-weight: 600;
-    font-size: 0.9rem;
-    padding: 0.4rem 1rem;
-    border: 1px solid var(--glass-border);
-    border-radius: 4px;
-    transition: var(--transition);
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.45rem 1.1rem;
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(26,60,40,0.06);
+    border-radius: 9999px; /* pill */
+    transition: var(--transition) , transform 0.08s ease;
     background: #fff;
     text-transform: uppercase;
 }
@@ -1046,6 +1122,7 @@ p {
     background: var(--primary);
     color: #fff;
     border-color: var(--primary);
+    transform: translateY(-3px);
 }
 
 /* -- Pizza Layout -- */
@@ -1081,7 +1158,7 @@ p {
         font-size: 1.1rem;
     }
     .sub-nav {
-        top: 60px;
+        top: calc(var(--navbar-height-mobile) + 6px);
         flex-wrap: nowrap;
         overflow-x: auto;
         justify-content: flex-start;
@@ -1097,6 +1174,7 @@ p {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    margin-top: 1rem;
     margin-bottom: 2rem;
     flex-wrap: wrap;
 }
@@ -1118,15 +1196,19 @@ p {
 .menu-tab-btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     background: transparent;
     border: 2px solid var(--primary);
     color: var(--primary);
     font-family: var(--font-heading);
-    font-size: 1.5rem;
-    padding: 0.5rem 1.5rem;
+    font-size: 1.3rem;
+    padding: 0.6rem 1rem;
+    min-height: 64px;
+    line-height: 1.05;
     border-radius: 8px;
     cursor: pointer;
     transition: var(--transition);
+    text-align: center;
 }
 .menu-tab-btn.active, .menu-tab-btn:hover {
     background: var(--primary);
@@ -1147,32 +1229,90 @@ p {
 /* -- Scroll to Top Button -- */
 .scroll-top-btn {
     position: fixed;
-    bottom: 30px;
+    bottom: 80px;
     right: 30px;
-    width: 50px;
-    height: 50px;
-    background: var(--primary);
-    color: #fff;
+    min-width: 56px;
+    height: 56px;
+    padding: 8px 14px;
+    background: linear-gradient(135deg, #ff9f1c 0%, var(--primary) 100%);
+    color: #0b2a1f;
     border: none;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    display: flex;
-    justify-content: center;
+    border-radius: 14px;
+    font-size: 1.0rem;
+    display: inline-flex;
+    gap: 10px;
     align-items: center;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px rgba(17, 24, 22, 0.45), 0 2px 6px rgba(0,0,0,0.25);
     opacity: 0;
     visibility: hidden;
-    transition: var(--transition);
-    z-index: 1000;
+    transition: transform 0.22s ease, opacity 0.25s ease, box-shadow 0.25s ease;
+    z-index: 1200;
+    backdrop-filter: blur(4px);
 }
+
 .scroll-top-btn.visible {
     opacity: 1;
     visibility: visible;
+    transform: translateY(0) scale(1);
 }
+
 .scroll-top-btn:hover {
-    transform: translateY(-3px);
-    background: #b55a20;
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 18px 40px rgba(17,24,22,0.5), 0 4px 10px rgba(0,0,0,0.28);
+}
+
+/* Tooltip using data-label attribute */
+.scroll-top-btn::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: calc(100% + 12px);
+    right: 50%;
+    transform: translateX(50%);
+    background: rgba(11,42,31,0.96);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.18s ease, visibility 0.18s ease;
+}
+
+.scroll-top-btn:hover::after,
+.scroll-top-btn:focus::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 480px) {
+    .scroll-top-btn {
+        right: 16px;
+        bottom: 36px;
+        min-width: 52px;
+        height: 52px;
+        font-size: 1.2rem;
+    }
+    .scroll-top-btn::after { display: none; }
+    .scroll-top-label { display: none; }
+}
+
+.scroll-top-btn svg { display: block; }
+.scroll-top-label { font-weight: 800; color: rgba(11,42,31,0.95); font-size: 0.95rem; }
+
+.back-to-top-inline {
+    padding: 0.7rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.back-to-top-inline:focus {
+    outline: 3px solid rgba(26,60,40,0.12);
+    outline-offset: 2px;
 }
 
 /* -- Mobile Pizza Price Fix -- */
