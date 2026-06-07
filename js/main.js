@@ -30,9 +30,9 @@ let current   = 0;
 let autoTimer;
 
 const slideIcons = [
-    'img/SVG/1.svg',
-    'img/SVG/2.svg',
-    'img/IMG_4373.JPG',
+    'img/SVG/1.webp',
+    'img/SVG/2.webp',
+    'img/IMG_4373.webp',
 ];
 
 if (slides.length > 0 && dotsContainer) {

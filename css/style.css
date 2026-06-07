@@ -111,7 +111,7 @@ p {
     top: 0;
     z-index: 1000;
     /* Hintergrundbild einfügen */
-    background-image: url('../img/image.png');
+    background-image: url('../img/image.webp');
     background-size: cover;
     background-position: center;
     border-bottom: none;
