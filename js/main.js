@@ -29,11 +29,19 @@ const dotsContainer = document.getElementById('slider-dots');
 let current   = 0;
 let autoTimer;
 
+const slideIcons = [
+    'img/SVG/1.svg',
+    'img/SVG/2.svg',
+    'img/IMG_4373.JPG',
+];
+
 if (slides.length > 0 && dotsContainer) {
     slides.forEach((_, i) => {
-        const dot = document.createElement('span');
+        const dot = document.createElement('button');
         dot.classList.add('dot');
         if (i === 0) dot.classList.add('active');
+        const icon = slideIcons[i] || slideIcons[0];
+        dot.innerHTML = `<img src="${icon}" alt="" class="dot-svg">`;
         dot.addEventListener('click', () => { goTo(i); startAuto(); });
         dotsContainer.appendChild(dot);
     });

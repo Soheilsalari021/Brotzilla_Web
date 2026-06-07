@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brotzilla - Bäckerei & Frühstück</title>
-    <meta name="description" content="Deine Bäckerei für monsterstarkes Frühstück und frisches Brot.">
+    <title>Brotzilla Heilbronn – Restaurant | Pizza, Burger & Frühstück</title>
+    <meta name="description" content="Brotzilla Restaurant in Heilbronn – Pizza, Burger, Frühstück, Salate & mehr. Gabelsbergerstr. 2, Di–So 10:30–22:00 Uhr.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" href="img/SVG/1.svg" as="image" fetchpriority="high">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -26,10 +28,6 @@
                 <li><a href="index.html#home">Start</a></li>
                 <li><a href="getraenke.html">Getränke</a></li>
                 <li><a href="speisen.html">Speisen</a></li>
-                <li style="display: flex; flex-direction: column; align-items: center; gap: 2px;">
-                    <span class="btn-primary" style="opacity: 0.6; cursor: not-allowed;">Reservieren</span>
-                    <span style="font-size: 0.7rem; font-weight: bold; color: var(--primary); text-transform: uppercase;">Coming soon</span>
-                </li>
                 <li class="mobile-only" style="margin-top: 1.5rem;"><a href="impressum.html">Impressum</a></li>
                 <li class="mobile-only"><a href="datenschutz.html">Datenschutz</a></li>
             </ul>
@@ -40,25 +38,22 @@
         <section id="home" class="hero">
             <div class="hero-slider-wrapper">
                 <div class="hero-slider" id="hero-slider">
-                    <div class="slide active" style="background-image: url('img/IMG_4366.JPG');">
+                    <div class="slide active">
+                        <img src="img/SVG/1.svg" class="slide-img" alt="Frühstück bei Brotzilla Heilbronn" fetchpriority="high" loading="eager">
                         <div class="hero-text-overlay">
                             <h1>Frühstück</h1>
                             <p>Unser monsterstarkes Frühstück für den perfekten Start in den Tag.</p>
                         </div>
                     </div>
-                    <div class="slide" style="background-image: url('img/IMG_4379.JPG');">
+                    <div class="slide">
+                        <img src="img/SVG/2.svg" class="slide-img" alt="Pizza und Burger bei Brotzilla Heilbronn" loading="lazy">
                         <div class="hero-text-overlay">
-                            <h1>Pizza und Burger</h1>
-                            <p>Herzhaft und frisch zubereitet für deinen Hunger am Mittag.</p>
+                            <h1>Pizza & Burger</h1>
+                            <p>Herzhaft und frisch zubereitet für deinen Hunger.</p>
                         </div>
                     </div>
-                    <div class="slide" style="background-image: url('img/IMG_4387.JPG');">
-                        <div class="hero-text-overlay">
-                            <h1>Bäckerei</h1>
-                            <p>Täglich frisches Brot und handgemachte Backwaren mit Liebe gebacken.</p>
-                        </div>
-                    </div>
-                    <div class="slide" style="background-image: url('img/IMG_4391.JPG');">
+                    <div class="slide">
+                        <img src="img/IMG_4373.JPG" class="slide-img" alt="Brotzilla Restaurant Heilbronn" loading="lazy">
                         <div class="hero-text-overlay">
                             <h1>Unser Restaurant</h1>
                             <p>Viel Platz zum Sitzen und Wohlfühlen in unserem einzigartigen Ambiente.</p>
@@ -71,9 +66,35 @@
             </div>
             <div class="hero-buttons">
                 <a href="speisen.html" class="btn-primary">Zu den Speisen</a>
-                <div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
-                    <span class="btn-secondary" style="opacity: 0.6; cursor: not-allowed;">Tisch reservieren</span>
-                    <span style="font-size: 0.85rem; font-weight: bold; color: #fff; letter-spacing: 1px; text-transform: uppercase; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Coming soon</span>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section class="about-section">
+            <div class="about-content reveal">
+                <h2 class="about-heading">MEHR ALS EINE BÄCKEREI</h2>
+                <p class="about-tagline">Restaurant &amp; Café · Pizza · Burger · Frühstück · Heilbronn</p>
+                <p class="about-text">
+                    Bei <strong>Brotzilla in Heilbronn</strong> erwartet dich weit mehr als eine gewöhnliche Bäckerei.
+                    Genieße ein monsterstarkes <strong>Frühstück</strong>, knusprige <strong>Pizza</strong> in vier Größen,
+                    saftige <strong>XXL-Burger</strong>, frische <strong>Salate</strong>, Paninis, Fastfood und hausgemachte
+                    <strong>Kuchen &amp; Torten</strong> – alles frisch zubereitet, täglich für dich.
+                </p>
+                <p class="about-text">
+                    Unser <strong>Restaurant in der Gabelsbergerstraße 2, Heilbronn</strong> (direkt neben Aldi) ist
+                    <strong>Dienstag bis Sonntag von 10:30 bis 22:00 Uhr</strong> geöffnet.
+                    Ob zum Mittag, Abendessen oder gemütlichen Kaffee – bei uns bist du richtig.
+                </p>
+                <div class="about-chips">
+                    <span>Pizza</span>
+                    <span>Burger</span>
+                    <span>Frühstück</span>
+                    <span>Salate</span>
+                    <span>Café</span>
+                    <span>Sandwich</span>
+                    <span>Fastfood</span>
+                    <span>Kuchen</span>
                 </div>
             </div>
         </section>
@@ -120,9 +141,10 @@
     <footer class="main-footer" id="contact">
         <div class="footer-container">
             <div class="footer-info reveal delay-1">
-                <h3>Brotzilla Bäckerei</h3>
-                <p>Deine Bäckerei in Heilbronn.</p>
+                <h3>Brotzilla Restaurant</h3>
+                <p>Dein Restaurant in Heilbronn.</p>
                 <p class="phone-number"><a href="tel:+4971315949283">📞 07131 59 49 283</a></p>
+                <p class="phone-number"><a href="https://wa.me/4915229297042" target="_blank" rel="noopener">💬 0152 29 297042</a></p>
             </div>
             <div class="footer-hours reveal delay-2">
                 <h3>Öffnungszeiten:</h3>
@@ -159,6 +181,6 @@
         </div>
     </div>
 
-    <script src="js/main.js?v=6"></script>
+    <script src="js/main.js?v=7" defer></script>
 </body>
 </html>
